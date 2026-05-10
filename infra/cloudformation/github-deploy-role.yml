@@ -1,0 +1,63 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Least-privilege GitHub OIDC deploy role for the thogiti/bwtr.ai static site.
+
+Parameters:
+  RoleName:
+    Type: String
+    Default: bwtr-ai-site-github-deploy
+  Repository:
+    Type: String
+    Default: thogiti/bwtr.ai
+  Branch:
+    Type: String
+    Default: main
+  BucketName:
+    Type: String
+    Default: bwtr-ai-site-prod
+  CloudFrontDistributionId:
+    Type: String
+    Description: CloudFront distribution ID created for bwtr.ai.
+
+Resources:
+  GitHubDeployRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Ref RoleName
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: !Sub 'arn:aws:iam::${AWS::AccountId}:oidc-provider/token.actions.githubusercontent.com'
+            Action: sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                token.actions.githubusercontent.com:aud: sts.amazonaws.com
+              StringLike:
+                token.actions.githubusercontent.com:sub: !Sub 'repo:${Repository}:ref:refs/heads/${Branch}'
+      Policies:
+        - PolicyName: bwtr-ai-site-deploy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Sid: ListSiteBucket
+                Effect: Allow
+                Action:
+                  - s3:ListBucket
+                Resource: !Sub 'arn:aws:s3:::${BucketName}'
+              - Sid: ManageSiteObjects
+                Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                  - s3:DeleteObject
+                Resource: !Sub 'arn:aws:s3:::${BucketName}/*'
+              - Sid: InvalidateSiteDistribution
+                Effect: Allow
+                Action:
+                  - cloudfront:CreateInvalidation
+                Resource: !Sub 'arn:aws:cloudfront::${AWS::AccountId}:distribution/${CloudFrontDistributionId}'
+
+Outputs:
+  RoleArn:
+    Value: !GetAtt GitHubDeployRole.Arn
