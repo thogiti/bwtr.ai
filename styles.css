@@ -1213,3 +1213,75 @@ h3 {
     width: 100%;
   }
 }
+
+/* Real logo and final form refinement pass. */
+.brand {
+  min-width: 230px;
+}
+
+.brand img {
+  height: 36px;
+  object-fit: contain;
+  object-position: left center;
+  width: 230px;
+}
+
+.site-footer .brand img {
+  height: 42px;
+  width: 270px;
+}
+
+.lead-form {
+  background: #ffffff;
+  gap: 14px 22px;
+  padding: 28px;
+}
+
+.lead-form-accent {
+  background: #ffffff;
+}
+
+.form-heading {
+  min-height: 142px;
+  padding-bottom: 16px;
+}
+
+.lead-form input,
+.lead-form select {
+  min-height: 48px;
+}
+
+.lead-form textarea {
+  min-height: 124px;
+}
+
+.lead-form input::placeholder,
+.lead-form textarea::placeholder {
+  color: #8b91a1;
+  font-weight: 500;
+}
+
+.form-submit {
+  border: 0;
+  box-shadow: 0 16px 30px rgba(194, 24, 116, 0.24);
+  margin-top: 8px;
+}
+
+.form-submit:hover {
+  box-shadow: 0 20px 36px rgba(194, 24, 116, 0.3);
+}
+
+.final-cta .button-primary {
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .brand img {
+    height: 34px;
+    width: 210px;
+  }
+
+  .lead-form {
+    padding: 24px;
+  }
+}
