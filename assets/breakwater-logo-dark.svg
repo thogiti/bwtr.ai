@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 180" role="img" aria-labelledby="title desc">
+  <title id="title">Breakwater logo</title>
+  <desc id="desc">Breakwater wordmark for dark backgrounds.</desc>
+  <rect width="680" height="180" fill="#050509"/>
+  <defs>
+    <linearGradient id="red" x1="0" x2="1"><stop stop-color="#ff3345"/><stop offset="1" stop-color="#b90f28"/></linearGradient>
+    <linearGradient id="magenta" x1="0" x2="1"><stop stop-color="#ff2e71"/><stop offset="1" stop-color="#8a24e6"/></linearGradient>
+    <linearGradient id="purple" x1="0" x2="1"><stop stop-color="#c73bff"/><stop offset="1" stop-color="#631dd8"/></linearGradient>
+    <linearGradient id="silver" x1="0" x2="1"><stop stop-color="#ffffff"/><stop offset="0.5" stop-color="#c9ceda"/><stop offset="1" stop-color="#6e7481"/></linearGradient>
+  </defs>
+  <g transform="translate(24 18)">
+    <path d="M52 58 C105 20 177 14 245 22 L238 42 C165 37 98 46 52 78 Z" fill="url(#silver)"/>
+    <path d="M50 84 C114 58 176 52 236 56 L230 78 C165 72 104 80 55 102 Z" fill="url(#red)"/>
+    <path d="M56 111 C123 90 182 86 224 91 L218 112 C164 105 112 113 62 130 Z" fill="url(#magenta)"/>
+    <path d="M66 139 C118 124 167 119 211 121 L205 141 C154 138 108 142 72 156 Z" fill="url(#purple)"/>
+    <path d="M265 24 L292 27 L285 47 L258 44 Z M307 31 L334 36 L326 57 L299 52 Z M348 42 L374 50 L363 71 L339 64 Z" fill="url(#silver)"/>
+    <path d="M252 59 L282 65 L273 87 L243 81 Z M297 72 L326 80 L316 101 L288 94 Z M341 88 L367 99 L354 119 L331 109 Z" fill="url(#red)"/>
+    <path d="M238 93 L270 101 L260 123 L228 115 Z M286 109 L315 119 L302 140 L276 130 Z M330 128 L354 140 L340 158 L319 148 Z" fill="url(#magenta)"/>
+  </g>
+  <text x="28" y="158" fill="#ff3345" font-family="Arial Black, Montserrat, Arial, sans-serif" font-size="48" font-weight="900" letter-spacing="7">BREAKWATER</text>
+  <text x="31" y="176" fill="#c28cff" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="7">CYBER RISK. MEASURED IN OPERATIONAL IMPACT</text>
+</svg>

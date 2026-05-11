@@ -65,7 +65,8 @@ aws s3 sync . s3://bwtr-ai-site-prod \
   --exclude ".github/*" \
   --exclude "infra/*" \
   --exclude "google-apps-script/*" \
-  --exclude "README.md"
+  --exclude "README.md" \
+  --exclude ".gitignore"
 aws cloudfront create-invalidation \
   --distribution-id E2M3MM3HR6HAUB \
   --paths "/*"
