@@ -100,6 +100,36 @@ repo:thogiti/bwtr.ai:ref:refs/heads/main
 
 Copy the `RoleArn` output into the `AWS_ROLE_TO_ASSUME` GitHub Actions secret.
 
+## Lead Capture Forms
+
+The site includes two branded static forms:
+
+- `Request a demo`
+- `Start a pilot`
+
+The forms post to a Google Apps Script Web App, which appends submissions to a Google Sheet.
+This keeps lead capture simple without adding an AWS API, database, or sales platform.
+
+Setup:
+
+1. Create a Google Sheet named `Breakwater Website Leads`.
+2. In the Sheet, open `Extensions` -> `Apps Script`.
+3. Paste the contents of `google-apps-script/Code.gs`.
+4. Deploy it as a Web App:
+   - Execute as: `Me`
+   - Who has access: `Anyone`
+5. Copy the Web App URL.
+6. Replace this placeholder in `index.html`:
+
+```js
+window.BREAKWATER_FORM_ENDPOINT = "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+```
+
+with the deployed Web App URL.
+
+The script writes submissions to a `Leads` sheet and includes a hidden honeypot field named
+`website` for basic spam filtering.
+
 ## Route 53 Safety
 
 Only `bwtr.ai` and `www.bwtr.ai` should point to the new marketing-site CloudFront distribution.

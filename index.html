@@ -17,6 +17,9 @@
     <meta property="og:url" content="https://bwtr.ai/" />
     <meta name="theme-color" content="#0b1020" />
     <link rel="canonical" href="https://bwtr.ai/" />
+    <script>
+      window.BREAKWATER_FORM_ENDPOINT = "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+    </script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -35,7 +38,7 @@
         <a href="#industries">Industries</a>
       </nav>
 
-      <a class="button button-primary header-cta" href="mailto:hello@bwtr.ai?subject=Breakwater%20demo%20request">
+      <a class="button button-primary header-cta" href="#demo-form">
         Request demo
       </a>
     </header>
@@ -51,10 +54,10 @@
             real-world consequence so security leaders can prioritize what actually matters.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="mailto:hello@bwtr.ai?subject=Breakwater%20demo%20request">
+            <a class="button button-primary" href="#demo-form">
               Request demo
             </a>
-            <a class="button button-ghost" href="mailto:hello@bwtr.ai?subject=Breakwater%20pilot%20request">
+            <a class="button button-ghost" href="#pilot-form">
               Start a pilot
             </a>
           </div>
@@ -201,12 +204,112 @@
         </div>
       </section>
 
+      <section class="section lead-section" id="lead-forms" aria-labelledby="lead-title">
+        <div class="lead-intro">
+          <p class="section-kicker">Talk to Breakwater</p>
+          <h2 id="lead-title">Start with a focused risk conversation.</h2>
+          <p>
+            Tell us what environment you are trying to protect. We will route demo and pilot
+            requests to the right person without adding a sales platform or backend service.
+          </p>
+        </div>
+
+        <div class="form-grid">
+          <form class="lead-form" id="demo-form" data-lead-form>
+            <input type="hidden" name="form_type" value="request_demo" />
+            <label class="hidden-field">Website <input name="website" tabindex="-1" autocomplete="off" /></label>
+            <div class="form-heading">
+              <span>01</span>
+              <h3>Request a demo</h3>
+              <p>Best for teams evaluating Breakwater for a specific security or operational risk program.</p>
+            </div>
+            <label>
+              Name
+              <input name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Work email
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Company
+              <input name="company" autocomplete="organization" required />
+            </label>
+            <label>
+              Role / title
+              <input name="title" autocomplete="organization-title" />
+            </label>
+            <label>
+              What are you trying to secure?
+              <textarea name="message" rows="4" placeholder="Cameras, IoT devices, facilities, OT networks, or critical infrastructure..."></textarea>
+            </label>
+            <button class="button button-primary" type="submit">Send demo request</button>
+            <p class="form-status" data-form-status aria-live="polite"></p>
+          </form>
+
+          <form class="lead-form lead-form-accent" id="pilot-form" data-lead-form>
+            <input type="hidden" name="form_type" value="start_pilot" />
+            <label class="hidden-field">Website <input name="website" tabindex="-1" autocomplete="off" /></label>
+            <div class="form-heading">
+              <span>02</span>
+              <h3>Start a pilot</h3>
+              <p>Best for organizations ready to test discovery, exposure mapping, and consequence modeling.</p>
+            </div>
+            <label>
+              Name
+              <input name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Work email
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Company
+              <input name="company" autocomplete="organization" required />
+            </label>
+            <label>
+              Industry
+              <select name="industry">
+                <option value="">Select one</option>
+                <option>Airports</option>
+                <option>Rail & metro</option>
+                <option>Ports</option>
+                <option>Manufacturing</option>
+                <option>Healthcare</option>
+                <option>Government</option>
+                <option>Other critical infrastructure</option>
+              </select>
+            </label>
+            <label>
+              Approximate device count
+              <input name="device_count" placeholder="Example: 300 cameras across 4 sites" />
+            </label>
+            <label>
+              Target timeline
+              <select name="timeline">
+                <option value="">Select one</option>
+                <option>Immediately</option>
+                <option>30 days</option>
+                <option>This quarter</option>
+                <option>Planning stage</option>
+              </select>
+            </label>
+            <label>
+              Pilot goals
+              <textarea name="message" rows="4" placeholder="What would make the pilot successful?"></textarea>
+            </label>
+            <button class="button button-primary" type="submit">Send pilot request</button>
+            <p class="form-status" data-form-status aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
       <section class="section final-cta" aria-labelledby="cta-title">
         <div>
           <p class="section-kicker">See the chain. Prevent the impact.</p>
           <h2 id="cta-title">Turn hidden cyber-physical exposure into a prioritized action plan.</h2>
         </div>
-        <a class="button button-primary" href="mailto:hello@bwtr.ai?subject=Breakwater%20risk%20discovery%20workshop">
+        <a class="button button-primary" href="#lead-forms">
           Book risk discovery workshop
         </a>
       </section>
@@ -227,5 +330,6 @@
         <a href="mailto:hello@bwtr.ai">Contact</a>
       </nav>
     </footer>
+    <script src="./script.js"></script>
   </body>
 </html>

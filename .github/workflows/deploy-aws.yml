@@ -34,7 +34,8 @@ jobs:
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude "infra/*" \
-            --exclude "README.md"
+            --exclude "README.md" \
+            --exclude "google-apps-script/*"
 
       - name: Invalidate CloudFront cache
         run: |

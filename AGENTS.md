@@ -64,11 +64,21 @@ aws s3 sync . s3://bwtr-ai-site-prod \
   --exclude ".git/*" \
   --exclude ".github/*" \
   --exclude "infra/*" \
+  --exclude "google-apps-script/*" \
   --exclude "README.md"
 aws cloudfront create-invalidation \
   --distribution-id E2M3MM3HR6HAUB \
   --paths "/*"
 ```
+
+## Lead Capture Forms
+The static forms in `index.html` submit through `script.js` to a Google Apps Script Web App.
+The Apps Script template lives at `google-apps-script/Code.gs` and appends rows to a Google
+Sheet named `Leads`.
+
+Do not add a backend service just for these forms unless the user explicitly asks for one.
+To activate submissions, replace `PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE` in `index.html`
+with the deployed Google Apps Script Web App URL.
 
 ## Validation
 For content-only changes, at minimum run:
