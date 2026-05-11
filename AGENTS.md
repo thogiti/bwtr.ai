@@ -1,0 +1,85 @@
+# Repository Guidelines
+
+## Repository Boundaries
+This repository, `thogiti/bwtr.ai`, is the public marketing website repository for `bwtr.ai`.
+It is intentionally separate from the Breakwater product/platform repository.
+
+Product source, dashboard, API, customer installers, Docker assets, licensing code, and product
+documentation live in:
+
+- Product repo: `https://github.com/gwuml/proscanx`
+
+Do not add platform source, private operational docs, customer installer secrets, Docker build
+contexts, production app code, or license-server code to this repository. If the user asks for
+product changes, dashboard fixes, API work, Docker tags/images, installer changes, or production
+`app.bwtr.ai` changes, work in `gwuml/proscanx` instead.
+
+## Hosting Model
+The public website is hosted on AWS:
+
+- `bwtr.ai` and `www.bwtr.ai` -> Route 53 -> CloudFront -> private S3 bucket
+- S3 bucket: `bwtr-ai-site-prod`
+- CloudFront distribution ID: `E2M3MM3HR6HAUB`
+- CloudFront domain: `d8xidtpdsz0p0.cloudfront.net`
+
+Do not move this site to GitHub Pages unless the user explicitly changes the hosting strategy.
+The old GitHub Pages `CNAME` workflow was removed intentionally.
+
+## Safe DNS Scope
+Only the exact records `bwtr.ai` and `www.bwtr.ai` belong to this marketing site.
+Do not change these production subdomains from this repository:
+
+- `app.bwtr.ai`
+- `install.bwtr.ai`
+- `license.bwtr.ai`
+
+## Development
+This is a static site. The main files are:
+
+- `index.html`
+- `styles.css`
+- `.github/workflows/deploy-aws.yml`
+- `infra/cloudformation/static-site.yml`
+- `infra/cloudformation/github-deploy-role.yml`
+
+Preview locally with:
+
+```bash
+python3 -m http.server 4177
+```
+
+## Deployment
+Deployment is through GitHub Actions using AWS OIDC. Required repo configuration:
+
+- Variable `AWS_REGION=us-east-1`
+- Variable `AWS_S3_BUCKET=bwtr-ai-site-prod`
+- Variable `AWS_CLOUDFRONT_DISTRIBUTION_ID=E2M3MM3HR6HAUB`
+- Secret `AWS_ROLE_TO_ASSUME=<deploy role ARN>`
+
+Manual deploy fallback from AWS CloudShell:
+
+```bash
+aws s3 sync . s3://bwtr-ai-site-prod \
+  --delete \
+  --exclude ".git/*" \
+  --exclude ".github/*" \
+  --exclude "infra/*" \
+  --exclude "README.md"
+aws cloudfront create-invalidation \
+  --distribution-id E2M3MM3HR6HAUB \
+  --paths "/*"
+```
+
+## Validation
+For content-only changes, at minimum run:
+
+```bash
+git diff --check
+```
+
+For deployment changes, validate the affected workflow/template and test both:
+
+```bash
+curl -I https://bwtr.ai
+curl -I https://www.bwtr.ai
+```
