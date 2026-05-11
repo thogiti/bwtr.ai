@@ -1577,12 +1577,12 @@ html[data-theme="dark"] .site-footer {
 
 /* Enterprise CTA pass: keep logo colors as accents and make actions feel less templated. */
 :root {
-  --cta-primary: #142033;
-  --cta-primary-hover: #0d1727;
+  --cta-primary: #19516f;
+  --cta-primary-hover: #123f58;
   --cta-primary-text: #ffffff;
-  --cta-primary-border: rgba(255, 255, 255, 0.14);
-  --cta-primary-shadow: 0 14px 28px rgba(10, 16, 36, 0.18);
-  --cta-primary-shadow-hover: 0 18px 34px rgba(10, 16, 36, 0.24);
+  --cta-primary-border: rgba(255, 255, 255, 0.18);
+  --cta-primary-shadow: 0 14px 28px rgba(25, 81, 111, 0.22);
+  --cta-primary-shadow-hover: 0 18px 34px rgba(25, 81, 111, 0.3);
 }
 
 html[data-theme="dark"] {
@@ -1615,7 +1615,7 @@ html[data-theme="dark"] {
 .final-cta .button-primary:focus-visible {
   box-shadow:
     0 0 0 3px rgba(255, 255, 255, 0.94),
-    0 0 0 6px rgba(20, 32, 51, 0.28),
+    0 0 0 6px rgba(25, 81, 111, 0.28),
     var(--cta-primary-shadow-hover);
   outline: none;
 }
