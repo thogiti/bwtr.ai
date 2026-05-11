@@ -1628,3 +1628,164 @@ html[data-theme="dark"] .final-cta .button-primary:focus-visible {
     0 0 0 6px rgba(238, 242, 248, 0.28),
     var(--cta-primary-shadow-hover);
 }
+
+/* Vantablack editorial pass: remove generic SaaS blues/purples from key UX surfaces. */
+:root {
+  --brand-red: #ec0000;
+  --brand-red-dark: #b90000;
+  --brand-magenta: #ec0000;
+  --brand-purple: #111111;
+  --blue: #111111;
+  --cyan: #ec0000;
+  --ink: #050505;
+  --muted: #5f6268;
+  --paper: #ffffff;
+  --line: rgba(5, 5, 5, 0.13);
+  --cta-primary: #ec0000;
+  --cta-primary-hover: #bf0000;
+  --cta-primary-text: #ffffff;
+  --cta-primary-border: rgba(236, 0, 0, 0.24);
+  --cta-primary-shadow: 0 14px 28px rgba(236, 0, 0, 0.18);
+  --cta-primary-shadow-hover: 0 18px 34px rgba(236, 0, 0, 0.25);
+}
+
+html[data-theme="dark"] {
+  --brand-red: #ff3131;
+  --brand-red-dark: #ec0000;
+  --brand-magenta: #ff3131;
+  --brand-purple: #ffffff;
+  --blue: #ffffff;
+  --cyan: #ff3131;
+  --ink: #f8f8f8;
+  --muted: #b9bcc3;
+  --paper: #050505;
+  --line: rgba(255, 255, 255, 0.14);
+  --cta-primary: #f7f7f7;
+  --cta-primary-hover: #ffffff;
+  --cta-primary-text: #050505;
+  --cta-primary-border: rgba(255, 255, 255, 0.24);
+  --cta-primary-shadow: 0 14px 32px rgba(0, 0, 0, 0.36);
+  --cta-primary-shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.44);
+}
+
+.nav-links a::after,
+.lead-form-accent::before {
+  background: var(--brand-red);
+}
+
+.theme-toggle span {
+  background: #ec0000;
+}
+
+.hero::after {
+  background:
+    linear-gradient(90deg, rgba(236, 0, 0, 0.18), transparent 34%),
+    radial-gradient(circle at 78% 20%, rgba(255, 255, 255, 0.08), transparent 26%);
+}
+
+.section-kicker {
+  color: var(--ink);
+  letter-spacing: 0.18em;
+}
+
+.hero .eyebrow {
+  color: #ffffff;
+}
+
+#platform {
+  background: var(--paper);
+  position: relative;
+}
+
+#platform .section-kicker {
+  align-items: center;
+  color: var(--ink);
+  display: inline-flex;
+  gap: 12px;
+}
+
+#platform .section-kicker::before {
+  background: var(--brand-red);
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 38px;
+}
+
+.value-grid {
+  gap: 0;
+}
+
+.value-grid article {
+  background: #ffffff;
+  border-color: rgba(5, 5, 5, 0.14);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.value-grid article:hover {
+  border-color: rgba(236, 0, 0, 0.32);
+}
+
+.icon,
+.flow span,
+.form-heading span {
+  color: var(--brand-red);
+}
+
+.product-band,
+.final-cta {
+  background:
+    linear-gradient(135deg, rgba(5, 5, 5, 0.98), rgba(18, 18, 18, 0.98)),
+    radial-gradient(circle at top right, rgba(236, 0, 0, 0.16), transparent 34%);
+}
+
+.industries,
+.lead-section {
+  background: #ffffff;
+}
+
+.industry-grid span {
+  background: #ffffff;
+  border: 1px solid rgba(5, 5, 5, 0.16);
+  color: var(--brand-red);
+}
+
+.request-chooser input:checked + span {
+  background: #ffffff;
+  border-color: rgba(236, 0, 0, 0.56);
+  box-shadow: 0 16px 28px rgba(236, 0, 0, 0.1);
+}
+
+.lead-form input:focus,
+.lead-form select:focus,
+.lead-form textarea:focus {
+  border-color: var(--brand-red);
+  box-shadow: 0 0 0 3px rgba(236, 0, 0, 0.1);
+}
+
+.button-primary:focus-visible,
+.lead-form .button-primary:focus-visible,
+.final-cta .button-primary:focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.94),
+    0 0 0 6px rgba(236, 0, 0, 0.26),
+    var(--cta-primary-shadow-hover);
+}
+
+html[data-theme="dark"] .section-kicker,
+html[data-theme="dark"] #platform .section-kicker {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] #platform,
+html[data-theme="dark"] .industries,
+html[data-theme="dark"] .lead-section {
+  background: #050505;
+}
+
+html[data-theme="dark"] .value-grid article,
+html[data-theme="dark"] .industry-grid span,
+html[data-theme="dark"] .request-chooser input:checked + span {
+  background: rgba(255, 255, 255, 0.055);
+}
