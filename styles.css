@@ -1574,3 +1574,57 @@ html[data-theme="dark"] .site-footer {
     min-height: auto;
   }
 }
+
+/* Enterprise CTA pass: keep logo colors as accents and make actions feel less templated. */
+:root {
+  --cta-primary: #142033;
+  --cta-primary-hover: #0d1727;
+  --cta-primary-text: #ffffff;
+  --cta-primary-border: rgba(255, 255, 255, 0.14);
+  --cta-primary-shadow: 0 14px 28px rgba(10, 16, 36, 0.18);
+  --cta-primary-shadow-hover: 0 18px 34px rgba(10, 16, 36, 0.24);
+}
+
+html[data-theme="dark"] {
+  --cta-primary: #eef2f8;
+  --cta-primary-hover: #ffffff;
+  --cta-primary-text: #101624;
+  --cta-primary-border: rgba(255, 255, 255, 0.28);
+  --cta-primary-shadow: 0 14px 32px rgba(0, 0, 0, 0.34);
+  --cta-primary-shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.42);
+}
+
+.button-primary,
+.lead-form .button-primary,
+.final-cta .button-primary {
+  background: var(--cta-primary);
+  border: 1px solid var(--cta-primary-border);
+  box-shadow: var(--cta-primary-shadow);
+  color: var(--cta-primary-text);
+}
+
+.button-primary:hover,
+.lead-form .button-primary:hover,
+.final-cta .button-primary:hover {
+  background: var(--cta-primary-hover);
+  box-shadow: var(--cta-primary-shadow-hover);
+}
+
+.button-primary:focus-visible,
+.lead-form .button-primary:focus-visible,
+.final-cta .button-primary:focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.94),
+    0 0 0 6px rgba(20, 32, 51, 0.28),
+    var(--cta-primary-shadow-hover);
+  outline: none;
+}
+
+html[data-theme="dark"] .button-primary:focus-visible,
+html[data-theme="dark"] .lead-form .button-primary:focus-visible,
+html[data-theme="dark"] .final-cta .button-primary:focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(8, 9, 17, 0.94),
+    0 0 0 6px rgba(238, 242, 248, 0.28),
+    var(--cta-primary-shadow-hover);
+}
