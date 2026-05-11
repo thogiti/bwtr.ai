@@ -94,7 +94,7 @@
       </section>
 
       <section class="trust-strip" aria-label="Breakwater deployment focus">
-        <span>Designed for security teams protecting</span>
+        <span>Built for critical infrastructure security teams</span>
         <strong>Airports</strong>
         <strong>Rail & Metro</strong>
         <strong>Ports</strong>
@@ -136,6 +136,18 @@
         </div>
       </section>
 
+      <section class="section consequence-callout" aria-labelledby="consequence-title">
+        <p class="section-kicker">Why Breakwater</p>
+        <div>
+          <h2 id="consequence-title">Traditional scanners give you lists. Breakwater gives you operational consequence.</h2>
+          <p>
+            Security leaders do not need another queue of disconnected findings. They need to know
+            which exposed cameras, devices, services, and paths can create downtime, blind spots, or
+            facility-level disruption.
+          </p>
+        </div>
+      </section>
+
       <section class="section product-band" id="cctv" aria-labelledby="cctv-title">
         <div class="product-copy">
           <p class="section-kicker">Featured product</p>
@@ -154,13 +166,13 @@
 
         <div class="dashboard-card" aria-label="Example Breakwater risk dashboard">
           <div class="dash-topline">
-            <span>Environment risk</span>
+            <span>Environment Risk Snapshot</span>
             <strong>High</strong>
           </div>
           <div class="dash-metrics">
-            <div><strong>78</strong><span>Risk score</span></div>
-            <div><strong>512</strong><span>High-risk devices</span></div>
-            <div><strong>1,092</strong><span>Critical exposures</span></div>
+            <div><small>Risk score</small><strong>78</strong><span>High consequence</span></div>
+            <div><small>High-risk devices</small><strong>512</strong><span>Prioritized</span></div>
+            <div><small>Critical exposures</small><strong>1,092</strong><span>Mapped to paths</span></div>
           </div>
           <div class="topology">
             <span class="node camera">CAM</span>
@@ -185,23 +197,23 @@
         <h2 id="workflow-title" class="centered">From asset reality to board-level consequence.</h2>
         <div class="flow" aria-label="Breakwater workflow">
           <article>
-            <span>Discover</span>
+            <span><i aria-hidden="true">01</i>Discover</span>
             <p>Build the ground truth of assets and connections.</p>
           </article>
           <article>
-            <span>Assess</span>
+            <span><i aria-hidden="true">02</i>Assess</span>
             <p>Enrich devices with firmware, CVE, and supply-chain context.</p>
           </article>
           <article>
-            <span>Model</span>
+            <span><i aria-hidden="true">03</i>Model</span>
             <p>Map attacker movement through cyber-physical paths.</p>
           </article>
           <article>
-            <span>Simulate</span>
+            <span><i aria-hidden="true">04</i>Simulate</span>
             <p>Estimate downtime, operational consequence, and blast radius.</p>
           </article>
           <article>
-            <span>Assure</span>
+            <span><i aria-hidden="true">05</i>Assure</span>
             <p>Validate improvements with remediation, deception, and learning loops.</p>
           </article>
         </div>
@@ -219,12 +231,12 @@
           </p>
         </div>
         <div class="industry-grid">
-          <article><span>✈</span><strong>Airports</strong><p>Terminals, perimeters, baggage, and access systems.</p></article>
-          <article><span>▣</span><strong>Rail & Metro</strong><p>Stations, tunnels, rolling stock, and command centers.</p></article>
-          <article><span>⚓</span><strong>Ports</strong><p>Terminals, cranes, yards, and logistics operations.</p></article>
-          <article><span>▦</span><strong>Manufacturing</strong><p>Plant surveillance, OT networks, and production continuity.</p></article>
-          <article><span>✚</span><strong>Healthcare</strong><p>Clinical facilities, connected devices, and safety operations.</p></article>
-          <article><span>◈</span><strong>Government</strong><p>Strategic infrastructure, public facilities, and resilience.</p></article>
+          <article><span class="industry-icon" data-icon="airport" aria-hidden="true"></span><strong>Airports</strong><p>Terminals, perimeters, baggage, and access systems.</p></article>
+          <article><span class="industry-icon" data-icon="rail" aria-hidden="true"></span><strong>Rail & Metro</strong><p>Stations, tunnels, rolling stock, and command centers.</p></article>
+          <article><span class="industry-icon" data-icon="port" aria-hidden="true"></span><strong>Ports</strong><p>Terminals, cranes, yards, and logistics operations.</p></article>
+          <article><span class="industry-icon" data-icon="plant" aria-hidden="true"></span><strong>Manufacturing</strong><p>Plant surveillance, OT networks, and production continuity.</p></article>
+          <article><span class="industry-icon" data-icon="health" aria-hidden="true"></span><strong>Healthcare</strong><p>Clinical facilities, connected devices, and safety operations.</p></article>
+          <article><span class="industry-icon" data-icon="gov" aria-hidden="true"></span><strong>Government</strong><p>Strategic infrastructure, public facilities, and resilience.</p></article>
         </div>
       </section>
 
@@ -325,23 +337,36 @@
           <p class="section-kicker">See the chain. Prevent the impact.</p>
           <h2 id="cta-title">Turn hidden cyber-physical exposure into a prioritized action plan.</h2>
         </div>
-        <a class="button button-primary" href="#lead-forms">
-          Book risk discovery workshop
-        </a>
+        <div class="final-actions">
+          <a class="button button-primary" href="#lead-form" data-select-request="request_demo">
+            Request demo
+          </a>
+          <a class="button button-secondary" href="#lead-form" data-select-request="start_pilot">
+            Book risk discovery workshop
+          </a>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <a class="brand" href="/" aria-label="Breakwater home">
-        <img class="logo-light" src="./assets/breakwater-horizontal-light-transparent.png" alt="Breakwater" />
-        <img class="logo-dark" src="./assets/breakwater-horizontal-dark-transparent.png" alt="Breakwater" />
-      </a>
-      <p>Predict cyber risk. Protect what matters.</p>
+      <div class="footer-main">
+        <a class="brand" href="/" aria-label="Breakwater home">
+          <img class="logo-light" src="./assets/breakwater-horizontal-light-transparent.png" alt="Breakwater" />
+          <img class="logo-dark" src="./assets/breakwater-horizontal-dark-transparent.png" alt="Breakwater" />
+        </a>
+        <p>Cyber risk, measured in operational impact.</p>
+      </div>
+      <div class="footer-signals" aria-label="Security and deployment signals">
+        <span>Private deployment ready</span>
+        <span>License-gated installer</span>
+        <span>Security review ready</span>
+      </div>
       <nav aria-label="Footer">
         <a href="#platform">Platform</a>
-        <a href="#cctv">CCTV+</a>
+        <a href="#cctv">Products</a>
         <a href="#industries">Solutions</a>
         <a href="#lead-forms">Contact</a>
+        <a href="mailto:hello@bwtr.ai">Privacy</a>
       </nav>
     </footer>
     <script src="./script.js"></script>
