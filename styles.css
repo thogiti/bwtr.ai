@@ -1789,3 +1789,139 @@ html[data-theme="dark"] .industry-grid span,
 html[data-theme="dark"] .request-chooser input:checked + span {
   background: rgba(255, 255, 255, 0.055);
 }
+
+/* IA/readability pass: stronger hero safe zone, clearer trust strip, mobile-first hook. */
+.button,
+.theme-toggle,
+.request-chooser span,
+.lead-form input,
+.lead-form select,
+.lead-form textarea {
+  transition:
+    background-color 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    color 260ms ease,
+    opacity 260ms ease,
+    transform 260ms ease;
+}
+
+.hero {
+  min-height: 760px;
+}
+
+.hero-bg {
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.98) 0%, rgba(5, 5, 5, 0.9) 32%, rgba(5, 5, 5, 0.52) 56%, rgba(5, 5, 5, 0.14) 100%),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.08), rgba(5, 5, 5, 0.74)),
+    url("https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=2400&q=82");
+  background-position: center right;
+}
+
+.hero::after {
+  mix-blend-mode: normal;
+}
+
+.hero-content {
+  align-self: center;
+  max-width: 720px;
+}
+
+.hero-bridge {
+  color: #ffffff;
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 800;
+  line-height: 1.18;
+  margin-bottom: 16px;
+  max-width: 680px;
+}
+
+.hero-copy {
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 650px;
+}
+
+.trust-strip {
+  align-items: center;
+  background: #050505;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 28px;
+  justify-content: center;
+  padding: 22px 24px;
+}
+
+.trust-strip span {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.trust-strip strong {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    background: #050505;
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    padding: 96px 22px 0;
+  }
+
+  .hero-bg {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    height: 220px;
+    inset: auto -22px 0;
+    margin-top: 28px;
+    order: 2;
+    position: relative;
+    transform: none;
+    width: calc(100% + 44px);
+  }
+
+  .hero-content {
+    align-self: auto;
+    max-width: none;
+    order: 1;
+    width: 100%;
+  }
+
+  .hero::after {
+    display: none;
+  }
+
+  h1 {
+    font-size: clamp(42px, 13vw, 58px);
+    line-height: 0.96;
+  }
+
+  .hero-bridge {
+    font-size: 22px;
+  }
+
+  .hero-copy {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    margin-bottom: 22px;
+  }
+
+  .proof-strip {
+    margin-top: 22px;
+  }
+
+  .trust-strip {
+    justify-content: flex-start;
+    padding: 20px 22px;
+  }
+}
