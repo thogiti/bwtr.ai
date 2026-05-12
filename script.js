@@ -44,7 +44,7 @@
       });
     });
     if (submit) {
-      submit.textContent = isPilot ? "Send CCTV+ pilot request" : "Send private demo request";
+      submit.textContent = isPilot ? "Send pilot request" : "Send demo request";
     }
   };
 
