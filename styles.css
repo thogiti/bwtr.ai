@@ -2670,3 +2670,122 @@ html[data-theme="dark"] .trust-signals strong {
     display: none;
   }
 }
+
+/* Dark mobile readability pass: fix white-card regressions and add mobile depth. */
+html[data-theme="dark"] .pilot-deliverables,
+html[data-theme="dark"] .pilot-path,
+html[data-theme="dark"] .personas {
+  background:
+    radial-gradient(circle at top right, rgba(236, 0, 0, 0.12), transparent 30%),
+    #050505;
+}
+
+html[data-theme="dark"] .deliverable-grid article,
+html[data-theme="dark"] .pilot-path-grid article,
+html[data-theme="dark"] .personas li,
+html[data-theme="dark"] .deployment-grid article {
+  background: rgba(255, 255, 255, 0.065);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #f8f8f8;
+}
+
+html[data-theme="dark"] .deliverable-grid h3,
+html[data-theme="dark"] .pilot-path-grid h3,
+html[data-theme="dark"] .personas h2,
+html[data-theme="dark"] .personas li,
+html[data-theme="dark"] .deployment-grid h3 {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .deliverable-grid p,
+html[data-theme="dark"] .pilot-path-grid p,
+html[data-theme="dark"] .not-for,
+html[data-theme="dark"] .deployment-grid p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+html[data-theme="dark"] .dashboard-card {
+  background:
+    linear-gradient(180deg, rgba(22, 22, 22, 0.95), rgba(10, 10, 10, 0.92)),
+    radial-gradient(circle at top right, rgba(236, 0, 0, 0.18), transparent 34%);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #f8f8f8;
+}
+
+html[data-theme="dark"] .snapshot-label,
+html[data-theme="dark"] .snapshot-caption,
+html[data-theme="dark"] .dash-metrics small,
+html[data-theme="dark"] .dash-metrics span {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+html[data-theme="dark"] .dash-metrics div,
+html[data-theme="dark"] .risk-list div,
+html[data-theme="dark"] .node {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .dash-metrics strong,
+html[data-theme="dark"] .risk-list span,
+html[data-theme="dark"] .node {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .risk-list strong,
+html[data-theme="dark"] .danger {
+  color: #ff3131;
+}
+
+html[data-theme="dark"] .topology {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    #0b0b0b;
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+html[data-theme="dark"] .impact {
+  background: rgba(236, 0, 0, 0.16);
+  border-color: rgba(255, 49, 49, 0.5);
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding-bottom: 74px;
+    padding-top: 74px;
+  }
+
+  .deliverable-grid,
+  .pilot-path-grid,
+  .personas ul,
+  .deployment-grid,
+  .trust-grid {
+    gap: 16px;
+  }
+
+  .deliverable-grid article,
+  .pilot-path-grid article,
+  .personas li,
+  .deployment-grid article,
+  .industry-grid article {
+    border-left: 3px solid var(--brand-red);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.08);
+  }
+
+  .pilot-deliverables,
+  .pilot-path,
+  .personas {
+    background:
+      linear-gradient(180deg, #ffffff, #f7f7f7);
+  }
+
+  html[data-theme="dark"] .pilot-deliverables,
+  html[data-theme="dark"] .pilot-path,
+  html[data-theme="dark"] .personas {
+    background:
+      radial-gradient(circle at 10% 0%, rgba(236, 0, 0, 0.18), transparent 24%),
+      linear-gradient(180deg, #050505, #101010);
+  }
+}
