@@ -2411,6 +2411,16 @@ html[data-theme="dark"] .trust-signals strong {
   margin: 8px 0 0;
 }
 
+.footer-wordmark {
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
 .footer-signals {
   display: flex;
   flex-wrap: wrap;
