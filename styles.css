@@ -2565,3 +2565,108 @@ html[data-theme="dark"] .trust-signals strong {
     flex-direction: column;
   }
 }
+
+/* Hero image refresh: keep the airport/flight visual present on mobile without sacrificing readability. */
+.hero {
+  min-height: clamp(680px, 82vh, 820px);
+  padding-bottom: 64px;
+}
+
+.hero-bg {
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.94) 0%, rgba(5, 5, 5, 0.78) 34%, rgba(5, 5, 5, 0.36) 63%, rgba(5, 5, 5, 0.08) 100%),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.12), rgba(5, 5, 5, 0.7)),
+    url("https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=2400&q=86");
+  background-position: center right;
+  background-size: cover;
+}
+
+.hero::after {
+  background:
+    linear-gradient(90deg, rgba(236, 0, 0, 0.16), transparent 36%),
+    radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.12), transparent 30%);
+}
+
+@media (max-width: 760px) {
+  .hero {
+    background: #050505;
+    display: grid;
+    min-height: 760px;
+    padding: 104px 22px 34px;
+  }
+
+  .hero-bg {
+    border-top: 0;
+    height: auto;
+    inset: 0;
+    margin-top: 0;
+    order: initial;
+    position: absolute;
+    transform: scale(1.01);
+    width: auto;
+    background:
+      linear-gradient(180deg, rgba(5, 5, 5, 0.74) 0%, rgba(5, 5, 5, 0.5) 28%, rgba(5, 5, 5, 0.9) 100%),
+      linear-gradient(90deg, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.36)),
+      url("https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=1600&q=86");
+    background-position: 66% center;
+    background-size: cover;
+  }
+
+  .hero-content {
+    align-self: end;
+    max-width: none;
+    order: initial;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .hero::after {
+    display: block;
+  }
+
+  .hero .eyebrow {
+    font-size: 11px;
+    line-height: 1.35;
+    max-width: 310px;
+  }
+
+  h1 {
+    font-size: clamp(42px, 14vw, 64px);
+    letter-spacing: -0.055em;
+    max-width: 360px;
+  }
+
+  .hero-bridge {
+    font-size: 19px;
+    max-width: 360px;
+  }
+
+  .hero-copy {
+    font-size: 15px;
+    max-width: 360px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin: 24px 0 18px;
+  }
+
+  .proof-strip {
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    min-height: 720px;
+  }
+
+  .hero-actions .button {
+    min-width: 100%;
+  }
+
+  .proof-strip {
+    display: none;
+  }
+}
