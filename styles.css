@@ -2789,3 +2789,88 @@ html[data-theme="dark"] .impact {
       linear-gradient(180deg, #050505, #101010);
   }
 }
+
+/* Dark theme normalization: one consistent charcoal system, no neon/radial SaaS gradients. */
+html[data-theme="dark"] body {
+  background: #050505;
+}
+
+html[data-theme="dark"] .site-header {
+  background: rgba(5, 5, 5, 0.9);
+}
+
+html[data-theme="dark"] #platform,
+html[data-theme="dark"] .trust-signals,
+html[data-theme="dark"] .consequence-callout,
+html[data-theme="dark"] .deployment-model,
+html[data-theme="dark"] .pilot-deliverables,
+html[data-theme="dark"] #workflow,
+html[data-theme="dark"] .industries,
+html[data-theme="dark"] .trust-section,
+html[data-theme="dark"] .pilot-path,
+html[data-theme="dark"] .personas,
+html[data-theme="dark"] .lead-section {
+  background: #050505;
+}
+
+html[data-theme="dark"] .product-band,
+html[data-theme="dark"] .final-cta,
+html[data-theme="dark"] .site-footer {
+  background: #050505;
+}
+
+html[data-theme="dark"] .hero::after {
+  background: linear-gradient(90deg, rgba(236, 0, 0, 0.12), transparent 36%);
+}
+
+html[data-theme="dark"] .dashboard-card {
+  background: #101010;
+}
+
+html[data-theme="dark"] .lead-form,
+html[data-theme="dark"] .lead-form-accent,
+html[data-theme="dark"] .dashboard-card,
+html[data-theme="dark"] .value-grid article,
+html[data-theme="dark"] .flow article,
+html[data-theme="dark"] .industry-grid article,
+html[data-theme="dark"] .deliverable-grid article,
+html[data-theme="dark"] .pilot-path-grid article,
+html[data-theme="dark"] .personas li,
+html[data-theme="dark"] .deployment-grid article,
+html[data-theme="dark"] .trust-grid article {
+  background: #111111;
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .dash-metrics div,
+html[data-theme="dark"] .risk-list div,
+html[data-theme="dark"] .node,
+html[data-theme="dark"] .request-chooser span,
+html[data-theme="dark"] .lead-form input,
+html[data-theme="dark"] .lead-form select,
+html[data-theme="dark"] .lead-form textarea {
+  background: #151515;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+html[data-theme="dark"] .request-chooser input:checked + span {
+  background: #181818;
+  border-color: rgba(236, 0, 0, 0.58);
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .topology {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    #0b0b0b;
+}
+
+@media (max-width: 760px) {
+  html[data-theme="dark"] .pilot-deliverables,
+  html[data-theme="dark"] .pilot-path,
+  html[data-theme="dark"] .personas {
+    background: #050505;
+  }
+}
