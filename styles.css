@@ -2187,6 +2187,7 @@ html[data-theme="dark"] .trust-signals strong {
 .demo-frame {
   background: #050505;
   border: 1px solid rgba(5, 5, 5, 0.14);
+  border-radius: 2px;
   box-shadow: 0 28px 70px rgba(5, 5, 5, 0.18);
   color: #ffffff;
   display: grid;
@@ -2229,6 +2230,7 @@ html[data-theme="dark"] .trust-signals strong {
   display: block;
   height: 100%;
   object-fit: contain;
+  position: relative;
   width: 100%;
 }
 
