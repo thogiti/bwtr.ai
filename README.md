@@ -20,6 +20,10 @@ The GitHub Actions workflow at `.github/workflows/deploy-aws.yml` deploys this s
 2. Syncing static files to S3.
 3. Invalidating the CloudFront distribution.
 
+Large product-demo videos are stored directly in S3 under `assets/videos/` and are intentionally
+not committed to this repository. The deploy workflow excludes that prefix during `aws s3 sync
+--delete` so publishing the static site does not remove S3-only media.
+
 Required repository configuration in `thogiti/bwtr.ai`:
 
 ### Actions Variables

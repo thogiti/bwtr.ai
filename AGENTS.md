@@ -65,12 +65,17 @@ aws s3 sync . s3://bwtr-ai-site-prod \
   --exclude ".github/*" \
   --exclude "infra/*" \
   --exclude "google-apps-script/*" \
+  --exclude "assets/videos/*" \
   --exclude "README.md" \
   --exclude ".gitignore"
 aws cloudfront create-invalidation \
   --distribution-id E2M3MM3HR6HAUB \
   --paths "/*"
 ```
+
+Large media assets are intentionally stored directly in S3, not in git. Preserve the
+`assets/videos/*` exclusion whenever deploying with `--delete`; otherwise S3-only product demo
+videos will be removed from the bucket.
 
 ## Lead Capture Forms
 The static forms in `index.html` submit through `script.js` to a Google Apps Script Web App.

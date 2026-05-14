@@ -36,6 +36,7 @@ jobs:
             --exclude "infra/*" \
             --exclude "README.md" \
             --exclude "google-apps-script/*" \
+            --exclude "assets/videos/*" \
             --exclude ".gitignore"
 
       - name: Invalidate CloudFront cache
