@@ -2180,6 +2180,65 @@ html[data-theme="dark"] .trust-signals strong {
   padding-right: max(24px, calc((100vw - var(--max)) / 2 + 24px));
 }
 
+.demo-section {
+  background: #ffffff;
+}
+
+.demo-frame {
+  background: #050505;
+  border: 1px solid rgba(5, 5, 5, 0.14);
+  box-shadow: 0 28px 70px rgba(5, 5, 5, 0.18);
+  color: #ffffff;
+  display: grid;
+  gap: 0;
+  grid-template-columns: minmax(280px, 0.42fr) minmax(0, 1fr);
+  overflow: hidden;
+}
+
+.demo-copy {
+  align-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  display: grid;
+  gap: 18px;
+  padding: 38px;
+}
+
+.demo-copy span {
+  color: var(--brand-red);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.demo-copy strong {
+  color: #ffffff;
+  font-size: clamp(26px, 3vw, 42px);
+  line-height: 1;
+}
+
+.demo-copy p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 17px;
+  margin: 0;
+}
+
+.demo-frame video {
+  aspect-ratio: 16 / 9;
+  background: #050505;
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.demo-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 28px;
+}
+
 .pilot-deliverables {
   background: #ffffff;
 }
@@ -2524,6 +2583,15 @@ html[data-theme="dark"] .trust-signals strong {
     grid-template-columns: 1fr;
   }
 
+  .demo-frame {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-copy {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-right: 0;
+  }
+
   .deliverable-grid,
   .pilot-path-grid,
   .dash-metrics {
@@ -2557,6 +2625,19 @@ html[data-theme="dark"] .trust-signals strong {
   .final-actions,
   .final-actions .button-primary,
   .final-actions .button-secondary {
+    width: 100%;
+  }
+
+  .demo-copy {
+    padding: 28px;
+  }
+
+  .demo-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .demo-actions .button {
     width: 100%;
   }
 
@@ -2801,6 +2882,7 @@ html[data-theme="dark"] .site-header {
 
 html[data-theme="dark"] #platform,
 html[data-theme="dark"] .trust-signals,
+html[data-theme="dark"] .demo-section,
 html[data-theme="dark"] .consequence-callout,
 html[data-theme="dark"] .deployment-model,
 html[data-theme="dark"] .pilot-deliverables,
